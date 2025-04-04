@@ -7,15 +7,12 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
-import java.util.function.Function;
 
 public class ModBlocks {
+    @SuppressWarnings("unused")
     public static final Block SAPPHIRE_BLOCK = register("sapphire_block", new Block(AbstractBlock.Settings.create()), true);
 
+    @SuppressWarnings("SameParameterValue")
     private static <T extends Block> T register(String name, T entry, boolean registerDefaultItem) {
         T registeredBlock = Registry.register(Registries.BLOCK, SchwertMod.getID(name), entry);
 
@@ -28,5 +25,6 @@ public class ModBlocks {
         return registeredBlock;
     }
 
-    public static void initialize() {}
+    public static void initialize() {
+    }
 }

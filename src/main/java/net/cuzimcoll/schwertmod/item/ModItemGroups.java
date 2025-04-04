@@ -16,19 +16,18 @@ public class ModItemGroups {
             .displayName(Text.translatable("itemGroup.schwertmod.schwert_mod")).build());
 
     static {
-        ItemGroupEvents.modifyEntriesEvent(SCHWERT_MOD).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.addAll(ModItems.ALL_ITEMS);
-        });
+        ItemGroupEvents.modifyEntriesEvent(SCHWERT_MOD).register(fabricItemGroupEntries -> fabricItemGroupEntries.addAll(ModItems.ALL_ITEMS));
     }
 
-    private static RegistryKey<ItemGroup> register (String name, ItemGroup group) {
+    @SuppressWarnings("SameParameterValue")
+    private static RegistryKey<ItemGroup> register(String name, ItemGroup group) {
         Identifier identifier = SchwertMod.getID(name);
         Registry.register(Registries.ITEM_GROUP, identifier, group);
 
         return RegistryKey.of(Registries.ITEM_GROUP.getKey(), identifier);
     }
 
-    public static void initialize () {
+    public static void initialize() {
 
     }
 }

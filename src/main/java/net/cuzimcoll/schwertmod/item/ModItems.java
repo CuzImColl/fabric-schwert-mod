@@ -1,24 +1,23 @@
 package net.cuzimcoll.schwertmod.item;
 
 import net.cuzimcoll.schwertmod.SchwertMod;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.*;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
 @SuppressWarnings("unused")
 public class ModItems {
-    public static final List <ItemStack> ALL_ITEMS = new ArrayList<>();
+    public static final List<ItemStack> ALL_ITEMS = new ArrayList<>();
 
 
     //Items
@@ -48,7 +47,7 @@ public class ModItems {
         return entry;
     }
 
-    public static void initialize () {
+    public static void initialize() {
 
     }
 }
