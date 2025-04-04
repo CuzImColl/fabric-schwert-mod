@@ -1,26 +1,44 @@
 package net.cuzimcoll.schwertmod.item;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.Item;
+import net.minecraft.block.Block;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.registry.tag.TagKey;
 
-import static net.cuzimcoll.schwertmod.item.ModItems.SCHWERT_MOD_GROUP;
-import static net.cuzimcoll.schwertmod.item.ModItems.SCHWERT_MOD_GROUP_KEY;
-import static net.minecraft.item.Items.register;
+public class ModToolsMaterials implements ToolMaterial {
 
-public class ModToolsMaterials {
-    public static final ToolMaterial SAPPHIRE_TOOL_MATERIAL = new ToolMaterial(
-            BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
-            1800,
-            8.0F,
-            3.0F,
-            10,
-            ItemTags.DIAMOND_TOOL_MATERIALS);
+    public static final ModToolsMaterials SAPPHIRE = new ModToolsMaterials();
+
+    @Override
+    public int getDurability() {
+        return 1850;
+    }
+
+    @Override
+    public float getMiningSpeedMultiplier() {
+        return 8.5f;
+    }
+
+    @Override
+    public float getAttackDamage() {
+        return 4f;
+    }
+
+    @Override
+    public TagKey<Block> getInverseTag() {
+        return BlockTags.INCORRECT_FOR_DIAMOND_TOOL;
+    }
+
+    @Override
+    public int getEnchantability() {
+        return 10;
+    }
+
+    @Override
+    public Ingredient getRepairIngredient() {
+        return Ingredient.ofItems(ModItems.SAPPHIRE_GEM);
+    }
 }
-
 

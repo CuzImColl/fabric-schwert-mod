@@ -1,0 +1,6 @@
+{
+  "parent": "schwertmod:block/sapphire_block",
+  "textures": {
+    "layer0": "schwertmod:block/sapphire_block"
+  }
+}

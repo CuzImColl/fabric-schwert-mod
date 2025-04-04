@@ -1,7 +1,11 @@
 {
-  "itemGroup.schwertmod": "Schwert Mod",
+  "itemGroup.schwertmod.schwert_mod": "Schwert Mod",
 
   "item.schwertmod.sapphire_gem": "Sapphire Gem",
   "item.schwertmod.sapphire_sword": "Sapphire Sword",
-  "item.schwertmod.sapphire_axe": "Sapphire Axe"
+  "item.schwertmod.sapphire_axe": "Sapphire Axe",
+  "item.schwertmod.sapphire_block": "Sapphire Block",
+
+  "block.schwertmod.sapphire_block": "Sapphire Block"
+
 }

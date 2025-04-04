@@ -10,55 +10,45 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import java.util.function.Function;
-import net.minecraft.item.SwordItem;
-import static net.cuzimcoll.schwertmod.item.ModToolsMaterials.SAPPHIRE_TOOL_MATERIAL;
+
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
+@SuppressWarnings("unused")
 public class ModItems {
-    public static final RegistryKey<ItemGroup> SCHWERT_MOD_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(SchwertMod.MOD_ID, "item_group"));
-    public static final ItemGroup SCHWERT_MOD_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(ModItems.SAPPHIRE_SWORD))
-            .displayName(Text.translatable("itemGroup.schwertmod"))
-            .build();
+    public static final List <ItemStack> ALL_ITEMS = new ArrayList<>();
+
 
     //Items
-    public static final Item SAPPHIRE_GEM = register("sapphire_gem", Item::new, new Item.Settings());
-    public static final Item SAPPHIRE_SWORD = register("sapphire_sword", Item::new, new Item.Settings());
+    public static final Item SAPPHIRE_GEM = register("sapphire_gem", new Item(new Item.Settings()));
 
     //Tools
-    public static final Item SAPPHIRE_AXE = register(
-            "sapphire_axe",
-            settings -> new AxeItem(SAPPHIRE_TOOL_MATERIAL, 5.5f, -3f, settings),
-            new Item.Settings());
+    public static final SwordItem SAPPHIRE_SWORD = register(
+            "sapphire_sword", new SwordItem(ModToolsMaterials.SAPPHIRE, new Item.Settings().maxCount(1)
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolsMaterials.SAPPHIRE,
+                            4,
+                            -2.4F))));
 
-    public static final Item SAPPHIRE_SWORD = register(
-            "sapphire_sword",
-            settings -> new SwordItem(SAPPHIRE_TOOL_MATERIAL, 5.5f, -3f, settings),
-            new Item.Settings());
+    public static final AxeItem SAPPHIRE_AXE = register(
+            "sapphire_axe", new AxeItem(ModToolsMaterials.SAPPHIRE, new Item.Settings().maxCount(1)
+                    .attributeModifiers(AxeItem.createAttributeModifiers(ModToolsMaterials.SAPPHIRE, 6, -2.4F))));
+
 
     //Armor Items
 
-
-    private static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
+    private static <T extends Item> T register(String name, T entry) {
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SchwertMod.MOD_ID, name));
 
-        Item item = itemFactory.apply(settings.registryKey(itemKey));
+        Registry.register(Registries.ITEM, itemKey, entry);
 
-        Registry.register(Registries.ITEM, itemKey, item);
+        ALL_ITEMS.add(entry.getDefaultStack());
 
-        return item;
+        return entry;
     }
 
+    public static void initialize () {
 
-
-    public static void registerModItems() {
-        Registry.register(Registries.ITEM_GROUP, SCHWERT_MOD_GROUP_KEY, SCHWERT_MOD_GROUP);
-
-        ItemGroupEvents.modifyEntriesEvent(SCHWERT_MOD_GROUP_KEY).register(itemGroup -> {
-            itemGroup.add(ModItems.SAPPHIRE_GEM);
-            itemGroup.add(ModItems.SAPPHIRE_SWORD);
-            itemGroup.add(ModItems.SAPPHIRE_AXE);
-        });
     }
 }
