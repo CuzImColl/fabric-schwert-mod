@@ -37,7 +37,7 @@ public class ModItems {
             settings -> new SwordItem(SAPPHIRE_TOOL_MATERIAL, 5.5f, -3f, settings),
             new Item.Settings());
 
-    //Armor
+    //Armor Items
 
 
     private static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
