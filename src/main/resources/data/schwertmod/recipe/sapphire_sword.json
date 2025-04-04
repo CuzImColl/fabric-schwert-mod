@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "/"
+  ],
+  "key": {
+    "#": "schwertmod:sapphire_gem",
+    "/": "minecraft:stick"
+  },
+  "result": {
+    "id": "schwertmod:sapphire_sword",
+    "count": 1
+  }
+}
