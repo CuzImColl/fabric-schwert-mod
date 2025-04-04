@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "schwertmod",
+	"version": "${version}",
+	"name": "Schwert Mod",
+	"description": "Erster Fabric Mod :) Ziel ist ein special Schwert mit eigenem Craftin und evtl. Mobs die Ressourcen für das Schwert droppen!",
+	"authors": [
+		"CuzImColl"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/schwertmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.cuzimcoll.schwertmod.SchwertMod"
+		],
+		"fabric-datagen": [
+			"net.cuzimcoll.schwertmod.SchwertModDataGenerator"
+		],
+		"client": [
+			"net.cuzimcoll.schwertmod.SchwertModClient"
+		]
+	},
+	"mixins": [
+		"schwertmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.12",
+		"minecraft": "~1.21.5",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
