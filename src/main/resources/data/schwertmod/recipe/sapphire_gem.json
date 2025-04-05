@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+  {
+    "item": "schwertmod:sapphire_block"
+  }
+    ],
+    "result": {
+    "count": 9,
+    "id": "schwertmod:sapphire_gem"
+  }
+}

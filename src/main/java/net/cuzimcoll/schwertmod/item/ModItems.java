@@ -22,6 +22,7 @@ public class ModItems {
 
     //Items
     public static final Item SAPPHIRE_GEM = register("sapphire_gem", new Item(new Item.Settings()));
+    public static final Item SAPPHIRE_DUST = register("sapphire_dust", new Item(new Item.Settings()));
 
     //Tools
     public static final SwordItem SAPPHIRE_SWORD = register(

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "catergory": "misc",
+  "coockingtime": 100,
+  "experience": 1,
+  "group": "sapphire_gem",
+  "ingredient": {
+    "item": "schwertmod:sapphire_dust"
+  },
+  "result": {
+    "id": "schwertmod:sapphire_gem"
+  }
+}

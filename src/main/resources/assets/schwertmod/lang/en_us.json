@@ -5,7 +5,8 @@
   "item.schwertmod.sapphire_sword": "Sapphire Sword",
   "item.schwertmod.sapphire_axe": "Sapphire Axe",
   "item.schwertmod.sapphire_block": "Sapphire Block",
+  "item.schwertmod.sapphire_dust": "Sapphire Dust",
 
-  "block.schwertmod.sapphire_block": "Sapphire Block"
-
+  "block.schwertmod.sapphire_block": "Sapphire Block",
+  "block.schwertmod.sapphire_ore": "Sapphire Ore"
 }

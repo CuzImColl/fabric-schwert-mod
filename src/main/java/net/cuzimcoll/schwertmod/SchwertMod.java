@@ -1,6 +1,6 @@
 package net.cuzimcoll.schwertmod;
 
-import net.cuzimcoll.schwertmod.item.ModBlocks;
+import net.cuzimcoll.schwertmod.block.ModBlocks;
 import net.cuzimcoll.schwertmod.item.ModItemGroups;
 import net.cuzimcoll.schwertmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -15,9 +15,10 @@ public class SchwertMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        ModItemGroups.initialize();
+
         ModBlocks.initialize();
         ModItems.initialize();
-        ModItemGroups.initialize();
     }
 
     public static Identifier getID(String path) {

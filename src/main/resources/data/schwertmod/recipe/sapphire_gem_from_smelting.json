@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "catergory": "misc",
+  "coockingtime": 200,
+  "experience": 1,
+  "group": "sapphire_gem",
+  "ingredient": {
+    "item": "schwertmod:sapphire_dust"
+  },
+  "result": {
+    "id": "schwertmod:sapphire_gem"
+  }
+}
